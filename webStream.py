@@ -15,6 +15,36 @@ import sys
 
 st.set_page_config(page_title="Deteksi Berita Palsu", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        position: relative;
+        min-height: 100vh;
+        background: transparent;
+    }
+    .stApp::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: -1;
+        background-image: url("https://t3.ftcdn.net/jpg/02/13/56/78/360_F_213567841_SiyyM6H4y067caRy58iLulWazeezPaui.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        filter: blur(8px) brightness(0.7);
+    }
+    /* Membuat konten lebih solid agar mudah dibaca */
+    .main .block-container {
+        background: rgba(255,255,255,0.85);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 lemma = WordNetLemmatizer()
 # nlp = spacy.load('en_core_web_sm')
